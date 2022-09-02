@@ -1,0 +1,13 @@
+.Home {
+  background-color: rgb(207, 226, 243);
+  height: 250px;
+  width: 350px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+
+p {
+  margin-top: 30px;
+}

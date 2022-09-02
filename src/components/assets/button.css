@@ -1,0 +1,19 @@
+.button {
+    background-color: rgb(207, 226, 243);
+    border: double;
+    width: 120px;
+    height: 40px;
+    margin-top: 10vh;
+  }
+  
+  .button:hover {
+    background-color: rgb(178, 214, 245);
+    cursor: pointer;
+  }
+  
+  .button:active {
+    background-color: rgb(207, 226, 243);
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 2px rgb(187, 187, 187) ;
+  }
+  
