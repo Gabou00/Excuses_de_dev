@@ -7,8 +7,7 @@ function Home() {
     return (
       <div className="Home">
         <p>Ma super application</p>
-        <div className="result"></div>
-        <Button/>
+        <div className="bouton"><Button/></div>
       </div>
     );
   }

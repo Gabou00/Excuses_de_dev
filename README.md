@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Test technique - Excuses de dev - Symbol IT
+## Gabriel Delachat - Septembre 2022
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objectifs
 
-## Available Scripts
+Tester votre niveau en git / CICD / Docker en déployant une petite application.
+Cet exercice va vous demander d'utiliser vos connaissances devOps
 
-In the project directory, you can run:
+Durée estimée : ~2h
 
-### `npm start`
+## Excuses de Dev
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Créer l’application "Excuses de Dev", c’est un générateur de phrase pour faire patienter les
+utilisateurs.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Backend (NodeJS - API REST)
 
-### `npm test`
+1. Une route qui liste les excuses (voir liste non exhaustive en bas de document)
+2. Une route qui permet l’ajout d'une excuse à la liste des excuses
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Frontend (ReactJS)
 
-### `npm run build`
+## Détails
+Une interface minimaliste avec un titre, une phrase générée et un bouton.
+(utiliser le framework de votre choix)
+Une fois la phrase générée, afficher la phrase excuse au centre de l'écran avec le bouton en
+dessous pour générer une nouvelle phrase.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Test React/Node
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Découpe des composants :
+- Un composant principal qui affiche le titre, la phrase et le bouton
+- Un sous-composant pour le bouton qui va générer la phrase et l’envoyer au composant
+parent.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Les différentes routes :
+- "/" => Page principale "Les excuses de dev".
+- "/lost" => Page affichant "i’m lost" avec un gif au centre de la page. Après 5 secondes
+redirection sur "/".
+- "*" => Page d’erreur 404
+- “/$http_code” => Page affichant le message correspond au code http
 
-### `npm run eject`
+Le sous-composant bouton va chercher dans un tableau (au préalable récupéré depuis le
+backend) une phrase aléatoirement dans un store.
+(attention, ne pas renvoyer la même phrase)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Bonus (en option)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Alimenter les excuses via le backend
+Un bouton ouvre une modale pour saisir une nouvelle excuse (saisie libre). Un bouton
+"Valider" procède à l’enregistrement dans le backend.
+La nouvelle excuse est immédiatement disponible.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Illusion de labeur
+Lors du click, ajouter un loader avec un temps de chargement aléatoire entre 1 seconde et 5
+secondes avant d’afficher le résultat.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Animations
+Lors de l'arrivée sur la page, afficher le titre au centre de l’écran avec un "Fade In". Après 2
+secondes afficher le bouton au centre avec une animation déplaçant le titre en haut de
+l’écran.

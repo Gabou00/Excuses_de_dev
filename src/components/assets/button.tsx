@@ -1,33 +1,29 @@
-// import React from "react";
-// import "./button.css";
-
-// function Button() {
-//   return (
-//     <div>
-//       <button className="button" onClick={this.sayHello}>Cliquer ici</button>
-//     </div>
-//   );
-// }
-
-// export default Button;
-// _______________________________________________________________________________ \\
-
+import { useState, useEffect } from "react";
 import "./button.css";
-import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "./button.css";
+
+const url = "http://localhost:3005/messages";
 
 function Button() {
-  const shoot = (a: any) => {
-    alert(a);
-  }
+  const [isSending, setIsSending] = useState(false);
+  const [quote, setQuote] = useState();
+
+  useEffect(() => {
+    isSending &&
+      fetch(url)
+        .then((response) => response.json())
+        .then(data => (data[Math.floor(Math.random() * data.length)]["message "]))
+        .then((quote: any) => (setQuote(quote)))
+        .then(() => setIsSending(false))
+  }, [isSending]);
+
 
   return (
-    <button onClick={() => shoot("Goal!")}>Take the shot</button>
+    <div>
+      <p>{quote}</p>
+      <button onClick={() => setIsSending(true)}>Cliquer ici</button>
+    </div>
   );
 }
-
-  const rootElement = document.getElementById("root");
-  ReactDOM.render(<Button />, rootElement);
 
 export default Button;
