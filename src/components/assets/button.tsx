@@ -24,7 +24,7 @@ function Button() {
   return (
     <div>
       <p>{quote}</p>
-      <button onClick={() => setIsSending(true)}>Cliquer ici</button>
+      <button className="button" onClick={() => setIsSending(true)}>Cliquer ici</button>
     </div>
   );
 }
