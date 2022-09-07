@@ -1,6 +1,4 @@
 // imports nécessaires
-import React from "react";
-import { useEffect } from "react"
 import Button from "../assets/button";
 import "./Home.css"
 
@@ -8,7 +6,7 @@ import "./Home.css"
 function Home() {
     return (
       <div className="Home">
-        <h4>Ma super application</h4>
+        <h4 className="title">Ma super application</h4>
         <div className="bouton"><Button/></div>
       </div>
     );

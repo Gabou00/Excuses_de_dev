@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./button.css";
-import ReactDOM from "react-dom";
 
 // Variable du serveur JSON
 const url = "http://localhost:3005/messages";

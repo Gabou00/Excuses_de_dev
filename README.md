@@ -1,7 +1,7 @@
-# Test technique - Excuses de dev - Symbol IT
+# Test technique - Excuses de dev
 ## Gabriel Delachat - Septembre 2022
 
-## Objectifs
+## Obje
 
 Tester votre niveau en git / CICD / Docker en déployant une petite application.
 Cet exercice va vous demander d'utiliser vos connaissances devOps
