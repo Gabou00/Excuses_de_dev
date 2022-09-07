@@ -1,0 +1,62 @@
+.Home {
+  background-color: rgb(207, 226, 243);
+  height: 300px;
+  width: 400px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+/* animation du titre avec le FadeIn et le déplacement de texte */
+@keyframes animation {
+  0% {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.title {
+  padding-top: 5vh;
+  animation-name: animation;
+  animation-duration: 2.8s;
+  /* animation-delay: 2s; */
+  animation-timing-function: linear;
+}
+
+/* animation et style du bouton */
+@keyframes animationBouton {
+   0% {
+    opacity: 1;
+  }
+   100% {
+    opacity: 1;
+  }
+}
+
+.button {
+  background-color: rgb(207, 226, 243);
+  border: double;
+  width: 120px;
+  height: 40px;
+  animation-name: animationBouton;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 5s;
+  opacity: 0;
+  animation-iteration-count: infinite;
+  }
+
+.button:hover {
+  background-color: rgb(178, 214, 245);
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: rgb(207, 226, 243);
+  cursor: pointer;
+  box-shadow: 2px 1px 3px 2px rgb(187, 187, 187);
+}
